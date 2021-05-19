@@ -192,18 +192,18 @@ ul.menuItems{
    
 }
 
-@media screen and (min-width:769px), (max-width:1324px){
+@media screen and (min-width:900px){
     #nav-bar li{
         display:inline; /*puts all the links in one row*/
+
     }
     
-    .menuItems{
+    ul.menuItems{
             padding:15px;
             list-style:none;
-            
+            color:#fff;
             /* border: 5px solid pink; */
             display: inline;
-            background-color: #333;
             flex:1;
     }
     
