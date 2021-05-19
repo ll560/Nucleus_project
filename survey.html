@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ecf487572c.js" crossorigin="anonymous">
+    </script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="top-container">
+        <header id="main-header">
+            <!-- <img id="main-header" src="images/nucleus.png" > -->
+            <div class="container">
+                <h1>Nucleus</h1>
+            </div>
+        </header>
+        <nav id="nav-bar">
+            <i class="fas fa-bars"></i>
+            <div class="container">
+                <ul class="menuItems">
+                    <li><a href="#">HOME</a></li>
+                    <li><a hfer="#">SURVEY</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="showcase-admissons">
+            <div class="container-admis">
+            <h1>Survey</h1> 
+    
+            <div id="main-button">
+              <button class= "openbtn" onclick="openSidebar()"> &#8592;</button> 
+            </div>
+    
+        </section>
+
+
+        <aside id="sidebar-all" class="sidebar-admiss"  > 
+            <div class="sidebar" >
+            <a href="javascript:void(0)" class="closebtn" onclick= "closeSidebar()">x</a>
+                  
+            <!-- <div class="container-left"> -->
+                <div class="container-left-row" >
+                    <a href="_blank">
+                    <i class="fas fa-home" aria-hidden="true"> Resources</i>
+                    </a>
+                </div>
+                    
+            <hr>
+                <div class="container-left-row">
+                    <a href="admissions.html">
+                    <i class="fas fa-home" aria-hidden="true"> Admissions</i>
+                    </a>
+                </div>
+            <hr>
+            
+                <div class="container-left-row">
+                    <a href="#">
+                    <i class="fas fa-home" aria-hidden="true"> Study Habits</i>
+                    </a> 
+                </div>
+            <hr>    
+                
+                    <div class="container-left-row">
+                        <a href="#">
+                        <i class="fas fa-home" aria-hidden="true"> Practice</i>
+                        </a>
+                    </div>
+            <hr>    
+                
+                    <div class="container-left-row">
+                        <a href="#">
+                        <i class="fas fa-home" aria-hidden="true"> Connect</i>
+                        </a> 
+                    </div>
+                  </div>
+                </aside>
+
+    <!---This is the survey body-->
+    <div class="create-body">
+        <div class="create-body-title"><h1>TELL ME YOUR RESOURCES!!</h1></div>
+        <p>Provide some information about resources you found helpful</p>
+        <form action="https://www.w3schools.com/action_page.php"> 
+            
+            <div> 
+                <label for="title">What is your favorite book set to use?</label>
+                <input type="text" id="title" name="title" value="Title">
+            </div>
+            <br>
+            <div> 
+                <label for="author">How long did you study?</label>
+                <input type="text" id="months" name="months" placeholder="Months">
+            </div>
+            <br>
+            <div>
+                <label for="publisher">If you signed up for a profession company, which one?</label>
+                <select name="company" id="company">
+                    <option value="select>">Select</option>
+                    <option value="kaplan">Kaplan</option>
+                    <option value="princeton review">Princeton Review</option>
+                    <option value="next step">Next Step</option>
+                    <option value="exam krackers">Exam Krackers</option>
+                    <option value="the gold standard">The Gold Standard</option>
+                    <option value="magoosh">Magoosh Mcat Prep</option>
+                    <option value="khan academy">Khan Academy</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="title">Did you use the AAMC MCAT prep material?</label>
+                <input type="button" id="yes" name="yes" value="Yes">
+                <input type="button" id="no" name="no" value="No">
+            </div>
+            <br>
+            <div> 
+                <label for="number of pages">Number of Pages:</label>
+                <input type="text" id="number of pages" name="number of pages" value="number of pages">
+            </div>
+            <br>
+            <div>
+                <label for="rating">Rating:</label>
+                <input type="text" id="rating" name="rating" placeholder="rating">
+            </div>
+            <br>
+            <div class="additional-info">
+                <label for="additional information">Would you like to add any other infomation?</label>
+               <input type="text" id="tell us" name="tell us" placeholder="Tell Us!"> 
+            </div>
+            <br>
+            <div class="button2">
+                <input type="button" class="button" value="Submit"> 
+            </div>
+        </form>
+        </div>
+
+        <footer id="main-footer">
+            <p>copyright &copy; 2021 My website</p>
+        </footer>
+</body>
+</html>

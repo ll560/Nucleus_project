@@ -1,0 +1,607 @@
+
+body{
+    background-color: #f4f4f4;  
+    color:#555;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height:1.6em;
+    background-image: linear-gradient(#FFFFFF, #abafaf);
+    margin:0px;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow:hidden; /*this ensures that there are no scroll bars if something goes outside container*/
+    display: flex;
+    flex-direction: row;
+    
+    /* border: 5px solid red;  shows all the containers */
+}
+
+#main-header{
+    background-color: coral;
+    color:#fff;
+    background-image: url('/images/nucleus.png');
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: left;
+    /* border: 5px teal solid; */ 
+}
+
+
+#nav-bar{
+    background-color:#333;
+    color:#fff;
+    height: 70px;
+    display: flex;
+    /* border: 5px teal solid; */
+}
+
+
+
+
+#nav-bar a{ /*this styles the links*/
+    color:#fff;
+    text-decoration: none; /*gets rid of underline*/
+    font-size: 18px;
+    padding-right: 15px; /*makes space on the right side*/
+}
+
+#nav-bar a:hover {
+    color: #78992e;
+    font-size:1em;
+}
+
+
+
+#showcase h1{
+    color: #fff;
+    font-size: 30px;
+    line-height:1.5em;
+    padding-top: 30px;
+}
+
+#main{
+    /* widows: 70%; */
+    border: white solid;
+    padding:0px 30px 0px 30px;
+    margin-right:25px; 
+    margin-bottom: 20px;  
+}
+
+#sidebar{
+    min-width:30%;
+
+    background: #333;
+    color:#fff;
+    padding:15px;
+    margin-bottom: 30px;
+    
+    /* border: 5px solid pink; */
+}
+
+#sidebar a:hover {
+    color: #78992e;
+    font-size:1em;
+    transition: 0.7s;
+}
+#sidebar a{
+    color:#fff;
+    text-decoration: none; /*gets rid of underline*/
+}
+
+.fa-home{
+    padding-right: 8px;
+}
+
+.container-left-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    height: 50px;
+}
+
+
+#main-footer{/*make footer full width of page*/
+    color: #fff;
+    background-color: #333;
+    width:100%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+  /*shouldn't really need a size from mobile*/
+#showcase{
+    background-image: url('images/bgimage.jpeg'); /* Img only avail with live server? Is that a problem? put the image in the html*/
+    background-position: center ;
+    text-align: center;
+    background-repeat: no-repeat;
+    /* background-size: auto; */
+    width:100%;
+    min-height: 250px; /*ensures that the text will not spill out from the showcase box, height grows with text*/ 
+    margin-bottom: 30px;
+}
+
+ #main-footer a{
+    color: #fff;
+}    
+#main-footer a:hover{
+    color: #78992e;
+}
+
+#main-header {
+    padding-left: 25px;   
+}
+
+
+ul.menuItems{ 
+    display: none;/*not shown in mobile size*/
+}
+
+.menuItems.open{
+    padding:10px;
+    list-style:none;
+    /* font-size: .5rem; */
+    /* border: 5px solid pink; */
+    display: inline;
+    background-color: #333;
+}
+
+#nav-bar li{
+    display:inline; /*puts all the links in one row*/
+    
+    }
+
+.fa-bars{
+        color: white;
+        /* border: red 5px solid; */
+        padding: 20px;
+        font-size: 2rem;
+    }
+    #h3{
+        font-size: 16px;
+        color:white;
+        display:flex;
+        flex-direction:column;
+    }
+
+
+
+@media screen and (min-width:481px), (max-width:768px){
+    
+    
+    #showcase{
+        background-image: url('/images/bgimage.jpeg');
+        background-position: center right;
+        text-align: center;
+        background-repeat: repeat;
+        min-height:300px; /*ensures that the text will not spill out from the showcase box, height grows with text*/ 
+        margin-bottom: 30px;
+    }
+    .openbtn{
+        font-size: 20px;
+        cursor: pointer;
+        background-color: default;
+        padding: 10px 15px;
+        border: none;
+        margin: 10px 0px 0px 350px;
+        
+    }
+   
+}
+
+@media screen and (min-width:769px), (max-width:1324px){
+    #nav-bar li{
+        display:inline; /*puts all the links in one row*/
+    }
+    
+    .menuItems{
+            padding:15px;
+            list-style:none;
+            
+            /* border: 5px solid pink; */
+            display: inline;
+            background-color: #333;
+            flex:1;
+    }
+    
+
+    .fa-bars {
+            display:none; 
+}
+
+    #showcase{
+        background-image: url('/images/bgimage.jpeg');
+        background-position: center;
+        text-align: center;
+        /* background-size: 100% 100%; */
+        min-height:300px; /*ensures that the text will not spill out from the showcase box, height grows with text*/ 
+        margin-bottom: 30px;
+    }
+    .top-container{
+        width:100%;
+        margin-bottom: 20px;
+    }  
+    
+
+}
+
+/*--------------------------------Admissions---------------------------------*/
+#showcase-admissons{
+    color: #fff;
+    background-color: #474e5d; 
+    display: flex;
+    
+    
+    
+
+}
+
+.container-admis{
+    width: 90%; 
+    margin: auto;
+    overflow:hidden; /*this ensures that there are no scroll bars if something goes outside container*/
+    display: flex;
+    justify-content: space-between;
+
+    /* border:solid 5px black; */
+}
+
+.container-admission-body{
+    width: 80%;
+    margin: auto;
+    overflow:hidden; /*this ensures that there are no scroll bars if something goes outside container*/
+    display: flex;
+    flex-direction: column;  
+    
+    /* border: 5px solid red; */
+}
+
+.main1{
+    width: 91%;
+    height: 80%;
+    border: white solid;
+    padding: 10px;
+    
+    margin: 20px 0px; 
+    display: flex;
+    flex-direction: row;
+
+    /* background-image: url('/images/woman-white-coat.jpeg');
+    background-size: 170px;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+.img-text{
+    width: 50%;
+    /* border:5px blue solid; */ 
+}
+
+.contianer-text{
+    /* border: red 5px solid;  */
+    width:50%;
+}
+
+#sidebar-all{
+    
+    width: 0px;
+    height: 100%;
+    position:fixed;
+    z-index:1;
+    top: 0;
+    right:0;
+
+    background: #333;
+    overflow: hidden;
+    color:#fff;
+    padding-top:80px;
+    margin-bottom: 30px;
+
+    transition: 0.5s;
+}
+
+#sidebar-all a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size:25;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar-all a:hover{
+    color:#78992e
+}
+
+#sidebar-all .closebtn{
+    position: absolute;
+    top:0;
+    right: 25px;
+    font-size: 36px;
+    margin-left:50px;
+}
+
+.openbtn{
+    font-size: 20px;
+    cursor: pointer;
+    background-color: default;
+    padding: 10px 15px;
+    border: none;
+     
+}
+
+.openbtn:hover{
+    background-color: #fff;
+}
+
+
+/********timeline*******/
+
+  
+  /* body {
+    background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+  } */
+  .timeline-title{
+      color:white;
+      font-size: 3.5em;
+      font-family: Helvetica, sans-serif;
+      padding-left: 70px;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin-bottom: 10px;
+
+
+    background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .container-timeline {
+    padding: 10px 40px;
+    position: relative;
+    background-color: #333;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .container-timeline::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 6px solid coral;/*the timeline circles*/
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color:white;
+    position: relative;
+    border-radius: 7px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  /* @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+    left: 31px;
+    }
+    
+    /* Full-width containers */
+    .container-timeline {
+    width: 80%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+    
+    /* Make sure that all arrows are pointing leftwards */
+    .container-timeline::before {
+    left: 60px;
+    border: medium solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+    left: 15px;
+    }
+    
+    /* Make all right containers behave like the left ones */
+    .right {
+    left: 0%;
+    }
+  /* } */
+   
+
+
+
+
+
+
+
+
+
+
+/*---------------------------About Page---------------------------------*/
+.some-background{
+    background-image: url('/images/boat-silhouette.jpeg');
+    height: 85px;
+}
+
+.about {
+      padding: 30px;
+      border: 5px #333 solid;
+      background-position: center center ;
+      background-color:#FFFFFF;
+      width:70%;
+      height:auto;
+      margin:60px;  
+      /* max-width: 610px;  */
+      /* min-width: 610px; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      text-align: center;
+}
+.mission{
+    padding: 30px;
+    border: 5px #333 solid;
+    background-position: center center ;
+    background-color:#FFFFFF;
+    width:70%;
+    height:auto;
+    margin:60px;  
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+ul.list{
+     display: flex;
+     flex-direction: column;
+     
+     margin-left: 140px;   
+     
+}
+/* ----------------------------Survey Body------------------------------------*/
+.create-body{
+    border: 5px solid #333;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    width: 70%;
+    background-position: center center;
+    margin-left: 70px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    padding-left:40px;
+}
+
+
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+ 
+}
+.button2{
+    width: 120px;
+}
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    width: fit-content;
+  }
+
+  /* ---------------------Study Page--------------------------- */
+.main2{
+    width: 90%;
+    height: 80%;
+    border: white solid;
+    padding: 10px;
+    
+    margin: 20px; 
+    display: flex;
+    flex-direction: row;
+}
+
+
+.study-techniques{
+    padding: 30px;
+    border: 5px #333 solid;
+    background-position: center center ;
+    background-color:#FFFFFF;
+    width:70%;
+    height:auto;
+    margin:60px;  
+
+    
+    
+
+    
+}
