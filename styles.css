@@ -228,15 +228,43 @@ ul.menuItems{
 
 }
 
+/*--------------------------------Admin---------------------------------*/
+.admin-body{
+    border: 5px solid #333;
+     margin: 30px;
+     background-color: #FFFFFF;
+     width: 70%;
+     background-position: center center;
+     margin-left: 70px;
+     padding: 30px;
+}
+
+.admin-title{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.admin-delete-button{
+    background-color:#FCCF14;
+    background-attachment: fixed;
+    width: fit-content;
+}
+
+.admin-edit-button{
+    background-color: #78992e;
+    width: fit-content;
+    background-attachment: fixed;
+    
+}
+
+.tutor{
+    margin-top: 50px;
+}
 /*--------------------------------Admissions---------------------------------*/
 #showcase-admissons{
     color: #fff;
     background-color: #474e5d; 
     display: flex;
     
-    
-    
-
 }
 
 .container-admis{
@@ -251,7 +279,7 @@ ul.menuItems{
 
 .container-admission-body{
     width: 80%;
-    margin: auto;
+    margin: 30px;
     overflow:hidden; /*this ensures that there are no scroll bars if something goes outside container*/
     display: flex;
     flex-direction: column;  
@@ -530,6 +558,12 @@ ul.menuItems{
     text-align: center;
 }
 
+#transparent-button{
+    background-color: transparent;
+    border: 1px #555 solid;
+    
+}
+
 
 ul.list{
      display: flex;
@@ -583,13 +617,16 @@ ul.list{
     width: 90%;
     height: 80%;
     border: white solid;
-    padding: 10px;
+    padding: 25px;
     
     margin: 20px; 
     display: flex;
     flex-direction: row;
 }
 
+.study-survey{
+    margin-top: 50px;
+}
 
 .study-techniques{
     padding: 30px;
@@ -598,10 +635,10 @@ ul.list{
     background-color:#FFFFFF;
     width:70%;
     height:auto;
-    margin:60px;  
+    margin:30px;
 
-    
-    
+}
 
-    
+.tutor{
+    margin-top: 50px;
 }

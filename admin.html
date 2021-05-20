@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Website</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://kit.fontawesome.com/ecf487572c.js" crossorigin="anonymous">
+     </script>
+    <script defer src="script.js"></script>
+    
+   
+</head>
+<body>
+<div class="top-container">
+    <header id="main-header">
+        <div class="container">
+            
+            <h1>Nucleus</h1>
+        </div>
+    </header>
+    <nav id="nav-bar">
+        <i class="fas fa-bars"></i>
+        <div class="container">
+            <ul class="menuItems">
+                <li><a href="#">HOME</a></li>
+                <li><a hfer="#">SURVEY</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SUPPORT</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="showcase-admissons">
+        <div class="container-admis">
+        <h1>Administrator</h1> 
+
+        <div id="main-button">
+          <button class= "openbtn" onclick="openSidebar()"> &#8592;</button> 
+        </div>
+
+    </section>
+
+
+    <aside id="sidebar-all" class="sidebar-admiss"  > 
+        <div class="sidebar" >
+        <a href="javascript:void(0)" class="closebtn" onclick= "closeSidebar()">x</a>
+              
+        <!-- <div class="container-left"> -->
+            <div class="container-left-row" >
+                <a href="_blank">
+                <i class="fas fa-home" aria-hidden="true"> Resources</i>
+                </a>
+            </div>
+                
+        <hr>
+            <div class="container-left-row">
+                <a href="admissions.html">
+                <i class="fas fa-home" aria-hidden="true"> Admissions</i>
+                </a>
+            </div>
+        <hr>
+        
+            <div class="container-left-row">
+                <a href="#">
+                <i class="fas fa-home" aria-hidden="true"> Study Habits</i>
+                </a> 
+            </div>
+        <hr>    
+            
+                <div class="container-left-row">
+                    <a href="#">
+                    <i class="fas fa-home" aria-hidden="true"> Practice</i>
+                    </a>
+                </div>
+        <hr>    
+            
+                <div class="container-left-row">
+                    <a href="#">
+                    <i class="fas fa-home" aria-hidden="true"> Connect</i>
+                    </a> 
+                </div>
+              </div>
+            </aside>
+    
+    <div class="admin-body">
+    <div class=admin-title>
+        <h1>ADMIN PAGE</h1>
+        <a href="./admin/add-resource"> <input type="button" class="admin-delete-button" value="ADD NEW RESOURCE"></a> 
+    </div>
+    <div>
+        <table class="table">
+        <tr> 
+            <th style="text-align: center">RESOURCE TITLE</th>
+            <th style="text-align: center">EDIT</th>
+            <th style="text-align: center">DELETE</th>     
+        </tr>
+        <tr>    
+            <td>Chemistry Questions</td>
+            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
+            <td><input type="button"  class="admin-delete-button" value="DELETE"></td>                
+        </tr>
+        <tr>    
+            <td>Biochemistry Questions </td>
+            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
+            <td><input type="button" class="admin-delete-button" value="DELETE"></td>
+        </tr>
+        <tr>    
+            <td>Biology Questions</td>
+            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
+            <td><input type="button" class="admin-delete-button" value="DELETE"></td>                
+        </tr>
+        <tr>    
+            <td>Psychology Questions</td>
+            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
+            <td><input type="button" class="admin-delete-button" value="DELETE"></td>                
+        </tr>
+        <tr>    
+            <td>Physics Questions </td>
+            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
+            <td><input type="button" class="admin-delete-button" value="DELETE"></td>
+        </tr>
+        <tr>    
+            <td>Physiology Questions</td>
+            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
+            <td><input type="button" class="admin-delete-button" value="DELETE"></td>
+        </tr>
+        <tr>
+           <div class="links">
+            <td>-------------------------------------------</td>
+           </div>
+        </tr> 
+            
+            
+        
+        <tr>    
+            <td>Resource Links</td>
+            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
+            <td><input type="button" class="admin-delete-button" value="DELETE"></td>
+        </tr>
+        
+        
+        <tr>    
+            <td>Support Infomation</td>
+            <td><input type=button class="admin-edit-button" value="EDIT"></td>
+            <td><input type=button class="admin-delete-button" value="DELETE"></td>
+        </tr>
+        <tr>    
+            <td>Survey</td>
+            <td><input type=button class="admin-edit-button" value="EDIT"></td>
+            <td><input type=button class="admin-delete-button" value="DELETE"></td>
+        </tr>
+    </table>
+</div>
+</div>
+    </div>
+
+    <footer id="main-footer">
+        <div id="h3"> 
+    
+            <div class="container2" id="lets-connect">
+                <h3>LETS CONNECT</h3>
+    
+                <div class="text-footer"><p>Nucleus <br>
+                Boston, MA </p>
+                </div>
+            </div>
+
+                <div class="container3">
+                    <h3>FOLLOW US</h3>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                </div>
+         <div>  
+             <p>copyright &copy; 2021 My website</p>
+        </div> 
+
+        </div>
+    </footer>
+
+</body>
+</html>
