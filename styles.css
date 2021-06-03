@@ -21,12 +21,17 @@ body{
 
 #main-header{
     background-color: coral;
+    display: inline-flex;
+    width: 100%;
+    margin-bottom: 1px;
+
+    /* border: 5px teal solid;  */
+}
+
+#main-header a{
     color:#fff;
-    background-image: url('/images/nucleus.png');
-    background-size: 80px;
-    background-repeat: no-repeat;
-    background-position: left;
-    /* border: 5px teal solid; */ 
+    text-decoration: none;
+    font-size: 20px;
 }
 
 
@@ -37,8 +42,6 @@ body{
     display: flex;
     /* border: 5px teal solid; */
 }
-
-
 
 
 #nav-bar a{ /*this styles the links*/
@@ -53,55 +56,6 @@ body{
     font-size:1em;
 }
 
-
-
-#showcase h1{
-    color: #fff;
-    font-size: 30px;
-    line-height:1.5em;
-    padding-top: 30px;
-}
-
-#main{
-    /* widows: 70%; */
-    border: white solid;
-    padding:0px 30px 0px 30px;
-    margin-right:25px; 
-    margin-bottom: 20px;  
-}
-
-#sidebar{
-    min-width:30%;
-
-    background: #333;
-    color:#fff;
-    padding:15px;
-    margin-bottom: 30px;
-    
-    /* border: 5px solid pink; */
-}
-
-#sidebar a:hover {
-    color: #78992e;
-    font-size:1em;
-    transition: 0.7s;
-}
-#sidebar a{
-    color:#fff;
-    text-decoration: none; /*gets rid of underline*/
-}
-
-.fa-home{
-    padding-right: 8px;
-}
-
-.container-left-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0;
-    height: 50px;
-}
 
 
 #main-footer{/*make footer full width of page*/
@@ -124,16 +78,34 @@ body{
     margin-bottom: 30px;
 }
 
- #main-footer a{
+#main-footer a{
     color: #fff;
 }    
 #main-footer a:hover{
     color: #78992e;
 }
 
-#main-header {
-    padding-left: 25px;   
+.fa-map-marker-alt{
+    padding: 20px;
 }
+
+.fa-facebook{
+    padding: 20px;
+}
+
+.fa-instagram{
+    padding: 20px;
+}
+
+.fa-twitter{
+    padding: 20px;
+}
+
+.text-footer{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
+
 
 
 ul.menuItems{ 
@@ -147,11 +119,23 @@ ul.menuItems{
     /* border: 5px solid pink; */
     display: inline;
     background-color: #333;
+
+    position: absolute;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
+  /* Change color of dropdown links on hover */
+  .menuItems.open li:hover {
+    background-color: rgb(83, 81, 82);
+    width: 92%;
+}
+
+
 #nav-bar li{
-    display:inline; /*puts all the links in one row*/
-    
+    padding: 10px; /*puts all the links in one row*/
+
     }
 
 .fa-bars{
@@ -159,6 +143,7 @@ ul.menuItems{
         /* border: red 5px solid; */
         padding: 20px;
         font-size: 2rem;
+        cursor: pointer;
     }
     #h3{
         font-size: 16px;
@@ -207,7 +192,6 @@ ul.menuItems{
             flex:1;
     }
     
-
     .fa-bars {
             display:none; 
 }
@@ -223,10 +207,64 @@ ul.menuItems{
     .top-container{
         width:100%;
         margin-bottom: 20px;
-    }  
-    
-
+    }
 }
+/*----------------index page------------*/
+#showcase h1{
+    color: #fff;
+    font-size: 30px;
+    line-height:1.5em;
+    padding-top: 30px;
+}
+
+#main{
+    /* widows: 70%; */
+    border: white solid;
+    padding:0px 30px 0px 30px;
+    margin-right:25px; 
+    margin-bottom: 20px;  
+}
+
+#sidebar{
+    min-width:30%;
+
+    background: #333;
+    color:#fff;
+    padding:15px;
+    margin-bottom: 30px;
+    
+    /* border: 5px solid pink; */
+}
+
+#sidebar a:hover {
+    color: #78992e;
+    font-size:1em;
+    transition: 0.7s;
+}
+#sidebar a{
+    color:#fff;
+    text-decoration: none; /*gets rid of underline*/
+}
+
+/* .fa-home{
+    padding-right: 8px;
+}
+.fa-archive{
+    padding-right: 9px;
+} */
+.fas{
+    padding-right: 10px;
+}
+
+.container-left-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    height: 50px;
+}
+
+
 
 /*--------------------------------Admin---------------------------------*/
 .admin-body{
@@ -314,7 +352,6 @@ ul.menuItems{
 }
 
 #sidebar-all{
-    
     width: 0px;
     height: 100%;
     position:fixed;
@@ -385,7 +422,6 @@ ul.menuItems{
     position: relative;
     max-width: 1200px;
     margin-bottom: 10px;
-
 
     background-color: #474e5d;
     font-family: Helvetica, sans-serif;
@@ -514,16 +550,35 @@ ul.menuItems{
 
 
 
-
-
-
-
-
-
 /*---------------------------About Page---------------------------------*/
 .some-background{
     background-image: url('/images/boat-silhouette.jpeg');
     height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+    
+}
+
+.container-about-motivation{
+    width: 70%; 
+    
+    padding-bottom: 40px;
+    margin: auto;
+    overflow:hidden; /*this ensures that there are no scroll bars if something goes outside container*/
+    display: flex;
+    justify-content: space-between;
+    
+    /* border:solid 5px black; */
+}
+
+
+#transparent-button{
+    background-color: transparent;
+    border: 1px #555 solid;
+    margin: 0;
 }
 
 .about {
@@ -558,20 +613,38 @@ ul.menuItems{
     text-align: center;
 }
 
-#transparent-button{
-    background-color: transparent;
-    border: 1px #555 solid;
-    
-}
+
 
 
 ul.list{
      display: flex;
      flex-direction: column;
      
-     margin-left: 140px;   
-     
+     margin-left: 140px;    
 }
+/*----------------------Resources Page-----------------*/
+.resources-body{
+    border:5px solid #333;
+    margin: 30px;
+    padding: 20px;
+}
+
+.collection-body{
+    border: 5px solid #063C5E;
+    padding:30px;
+    margin: 0px;
+    width: 75%;
+    height:auto; 
+    position: center;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+
+
+
+
 /* ----------------------------Survey Body------------------------------------*/
 .create-body{
     border: 5px solid #333;
@@ -581,8 +654,7 @@ ul.list{
     background-position: center center;
     margin-left: 70px;
     margin-top: 30px;
-    padding-bottom: 30px;
-    padding-left:40px;
+    padding: 30px 50px;
 }
 
 
@@ -642,3 +714,15 @@ ul.list{
 .tutor{
     margin-top: 50px;
 }
+
+/* ----------practice-------------- */
+
+  
+  
+  
+
+
+  
+  
+  
+ 

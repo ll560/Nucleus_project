@@ -1,13 +1,31 @@
+// dropdown menu
 let menuIcon = document.querySelector(".fa-bars");
 let menuItems = document.querySelector(".menuItems");
-    console.log(menuItems)
-    console.log(menuIcon)
+   
 
     const toggleMenuItems = function(){
     menuItems.classList.toggle("open");
 }
 
 menuIcon.addEventListener("click", toggleMenuItems);
+
+
+//close down menu 
+
+window.onclick = function(event) {
+  if (!event.target.matches('.fa-bars')) {
+    let dropdowns = document.getElementsByClassName("menuItems");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('open')) {
+        openDropdown.classList.remove('open');
+      }
+    }
+  }
+}
+
+
 
 //-----admissions sidebar open/collapse---------
 
@@ -24,3 +42,6 @@ function closeSidebar() {
   document.getElementById("main-button").style.marginRight= "0px";
   document.getElementById("main-button").style.display = "inline";
 }
+
+
+
