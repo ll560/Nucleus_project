@@ -1,54 +1,28 @@
 const { response } = require("express");
 const express = require("express");
 const { request } = require("http");
-
 const app = express();
-
 const PORT = 3000;
-
 const morgan = require('morgan');
+const path = require('path');
+const routes = require('./routes/indexRoutes');
+const methodOverride = require('method-override');
 
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(routes);
 
 
-//site pages
-app.get("/", (request, response) => {
-    response.render("/pages/views/index");
-});
-
-app.get('/about', (request, response) => {
-    response.render('about');
-});
-
-app.get('/login', (request, repsonse) => {
-    response.render('login');
-});
-
-//admissions
-app.get('/admissions/show', (request, response) => {
-    response.render('admissions');
-});
-app.post('/admissions', (request, response) => {
-    response.redirect('index');
-});
-
-//survey
-app.get('/admissions/show', (request, response) => {
-    response.render('admissions');
-});
-app.post('/admissions', (request, response) => {
-    response.redirect('/');
-});
+//middlware
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(methodOverride('_method'));
 
 
-//admin
-app.get('/admin/show', (request, response) => {
-    response.render('admin');
-});
-app.post('/admin', (request, response) => {
-    response.redirect('index');
-});
+
+
+
 
 
 app.listen(PORT,() => {

@@ -192,7 +192,7 @@ ul.menuItems{
             flex:1;
     }
     
-    .fa-bars {
+    .fa-bars::before{
             display:none; 
 }
 
@@ -223,6 +223,7 @@ ul.menuItems{
     padding:0px 30px 0px 30px;
     margin-right:25px; 
     margin-bottom: 20px;  
+    background-color: #fff;
 }
 
 #sidebar{
@@ -246,12 +247,7 @@ ul.menuItems{
     text-decoration: none; /*gets rid of underline*/
 }
 
-/* .fa-home{
-    padding-right: 8px;
-}
-.fa-archive{
-    padding-right: 9px;
-} */
+
 .fas{
     padding-right: 10px;
 }
@@ -263,6 +259,21 @@ ul.menuItems{
     margin: 0;
     height: 50px;
 }
+
+#all-images{
+     
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    align-content:baseline;
+
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+
+    /* border: 5px solid red; */
+}
+
+
 
 
 
@@ -641,6 +652,71 @@ ul.list{
     justify-content: center;
     flex-direction:column;
 }
+
+/*-------------trying----------*/
+ 
+.collection-body-resource{
+    border: 5px solid #063C5E;
+    padding:50px;
+    margin: 70px;
+    width: 75%;
+    height:auto; 
+    background-position: center center;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.title{
+    text-align: center; 
+    color: #063C5E;
+    
+}
+
+.complete-title{
+    text-align: center;
+    color: #063C5E;
+}
+
+#all-images{
+    
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    align-content:baseline;
+
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+
+    /* border: 5px solid black; */
+}
+
+#all-images a:hover{
+    color:purple;
+}
+#all-images a:link{
+    color:rgb(156, 46, 156);
+}
+#all-images a:visited{
+    color:purple;
+}
+
+.resource-text{ 
+    width:160px;
+    height:360px;
+    position:relative;
+    /* border: 5px solid red; */
+}
+
+
+
+.resource-img{
+    width:160px;
+    height:250px;   
+}
+
+
 
 
 

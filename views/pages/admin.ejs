@@ -1,38 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY Website</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://kit.fontawesome.com/ecf487572c.js" crossorigin="anonymous">
-     </script>
-    <script defer src="script.js"></script>
-    
-   
-</head>
-<body>
-<div class="top-container">
-    <header id="main-header">
-        <a href="index.html">
-            <img src="./images/nucleus.png" style="width: 70px;">
-        
-        <div class="container">
-             <h1>Nucleus</h1> </a>
-       
-    </div>
-    </header>
-    <nav id="nav-bar">
-        <i class="fas fa-bars"></i>
-        <div class="container">
-            <ul class="menuItems">
-                <li><a href="#">HOME</a></li>
-                <li><a hfer="#">SURVEY</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SUPPORT</a></li>
-            </ul>
-        </div>
-    </nav>
+<%- include('../partials/head') -%>
+    <%- include('../partials/nav-bar') -%>
     <section id="showcase-admissons">
         <div class="container-admis">
         <h1>Administrator</h1> 
@@ -44,50 +11,14 @@
     </section>
 
 
-    <aside id="sidebar-all" class="sidebar-admiss"  > 
-        <div class="sidebar" >
-        <a href="javascript:void(0)" class="closebtn" onclick= "closeSidebar()">x</a>
-              
-        <!-- <div class="container-left"> -->
-            <div class="container-left-row" >
-                <a href="_blank">
-                <i class="fas fa-home" aria-hidden="true"> Resources</i>
-                </a>
-            </div>
-                
-        <hr>
-            <div class="container-left-row">
-                <a href="admissions.html">
-                <i class="fas fa-home" aria-hidden="true"> Admissions</i>
-                </a>
-            </div>
-        <hr>
-        
-            <div class="container-left-row">
-                <a href="#">
-                <i class="fas fa-home" aria-hidden="true"> Study Habits</i>
-                </a> 
-            </div>
-        <hr>    
-            
-                <div class="container-left-row">
-                    <a href="#">
-                    <i class="fas fa-home" aria-hidden="true"> Practice</i>
-                    </a>
-                </div>
-        <hr>    
-            
-                <div class="container-left-row">
-                    <a href="#">
-                    <i class="fas fa-home" aria-hidden="true"> Connect</i>
-                    </a> 
-                </div>
-              </div>
-            </aside>
+    <%- include('../partials/aside-bar.ejs') -%>
     
     <div class="admin-body">
     <div class=admin-title>
         <h1>ADMIN PAGE</h1>
+
+    
+
         <a href="./admin/add-resource"> <input type="button" class="admin-delete-button" value="ADD NEW RESOURCE"></a> 
     </div>
     <div>
@@ -98,7 +29,7 @@
             <th style="text-align: center">DELETE</th>     
         </tr>
         <tr>    
-            <td>Chemistry Questions</td>
+            <td>organization </td>
             <td><input type="button" class="admin-edit-button" value="EDIT"></td>
             <td><input type="button"  class="admin-delete-button" value="DELETE"></td>                
         </tr>

@@ -1,0 +1,11 @@
+<% data.forEach(resource => { %>
+    <div> <a href="resources/<%= data._id %>"> <img class="resource-img" src="images/<%= data.image %>"/></a></div>
+    <%= resource.organization %>
+    <%= resource.program %>
+    <%= resource.location %>
+    <%= resource.activity %>
+    <%= resource.favoritePart %>
+    <%= resource.rating %>
+    <%= resource.synopsis %>
+    
+<% }); %>

@@ -1,0 +1,88 @@
+<%- include('../partials/head') -%>
+    <%- include('../partials/nav-bar') -%>
+       
+       
+        <section id="showcase-admissons">
+            <div class="container-admis">
+            <h1>Resources</h1> 
+    
+            <div id="main-button">
+              <button class= "openbtn" onclick="openSidebar()"> &#8592;</button> 
+            </div>
+    
+        </section>
+
+
+        <%- include('../partials/aside-bar.ejs') -%>
+    <!------------resource body-------> 
+    <div class="resources-body">
+        <h2>Boston: The Science Hub</h2>
+        <p>
+       There are hospitals, univerisities and organizations around Boston that you can apply to for additonal support. Before applying to medical school you want to expereince as much as you can to supplement your application and show that you understand the responsibilites of being a physician.  
+        </p>
+        <p>If you need to enhance your academic record there are numerous universities to take additional classes. If you want to gain clinical experience try applying for a position at a local hospital. Below is a list of various resources around the city. </p>
+    
+    <div class="collection-body-resource">
+        <div class="complete-title">
+            <h2>RESOURCE COLLECTION</h2>
+        </div>
+    <div id="all-images">
+        <% data.forEach(resource => { %>
+            <div class="resource-text">
+                 
+                        <div>
+                            <a href="/books/<%= resource._id %>"> <img class="resource-img" src="../images/<%= resource.image %>"/></a></div>
+                        <span class="emphasis"><%= resource.organization %></span><br>
+                         <%= resource.program %> <br>
+                        <%= resource.location %> <br>
+                        <%= resource.activity %> <br>
+                        <%= resource.highlight %> <br>
+                        <a class="all-images__link" href="<%= resource.link %>">Details</a>
+                    
+                </div> 
+            <% }); %>
+
+
+      
+        
+    </div>
+    
+    
+    
+    
+    </div>
+    </div>
+
+
+
+
+
+<!------------^resource body^---------->
+
+<!---------Footer------->
+<footer id="main-footer">
+    <div id="h3"> 
+
+        <div class="container2" id="lets-connect">
+            <h3>LETS CONNECT</h3>
+
+            <div class="text-footer"><p>Nucleus <br>
+            Boston, MA </p>
+            </div>
+        </div>
+
+            <div class="container3">
+                <h3>FOLLOW US</h3>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            </div>
+     <div>  
+         <p>copyright &copy; 2021 My website</p>
+    </div> 
+
+    </div>
+</footer>
+
+</body>
+</html>

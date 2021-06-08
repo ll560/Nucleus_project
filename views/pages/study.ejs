@@ -1,36 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://kit.fontawesome.com/ecf487572c.js" crossorigin="anonymous"></script>
-    <script defer src=script.js></script>
-</head>
-<body>
-    
-        <div class="top-container">
-            <header id="main-header">
-                <a href="index.html">
-                    <img src="./images/nucleus.png" style="width: 70px;">
-                
-                <div class="container">
-                     <h1>Nucleus</h1> </a>
-               
-            </div>
-            </header>
-            <nav id="nav-bar">
-                <i class="fas fa-bars"></i>
-                
-                    <ul class="menuItems">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="survey.html">SURVEY</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
-                        
-                    </ul>
-                
-            </nav>
+<%- include('../partials/head') -%>
+    <%- include('../partials/nav-bar') -%>
 
         <div class="body-color">
     <!----------Header---------->
@@ -44,45 +13,7 @@
 
     </section>
         <!--------This is the sidebar------>
-        <aside id="sidebar-all" class="sidebar-admiss"  > 
-            <div class="sidebar" >
-            <a href="javascript:void(0)" class="closebtn" onclick= "closeSidebar()">x</a>
-                  
-                <div class="container-left-row" >
-                    <a href="resources.html">
-                    <i class="fas fa-home" aria-hidden="true"> Resources</i>
-                    </a>
-                </div>
-                    
-            <hr>
-                <div class="container-left-row">
-                    <a href="admissions.html">
-                    <i class="fas fa-home" aria-hidden="true"> Admissions</i>
-                    </a>
-                </div>
-            <hr>
-            
-                <div class="container-left-row">
-                    <a href="study.html">
-                    <i class="fas fa-home" aria-hidden="true"> Study Habits</i>
-                    </a> 
-                </div>
-            <hr>    
-                
-                    <div class="container-left-row">
-                        <a href="practice.html">
-                        <i class="fas fa-home" aria-hidden="true"> Practice</i>
-                        </a>
-                    </div>
-            <hr>    
-                
-                    <div class="container-left-row">
-                        <a href="#lets-connect">
-                        <i class="fas fa-envelope" aria-hidden="true"> Connect</i>
-                        </a> 
-                    </div>
-                  </div>
-                </aside>
+        <%- include('../partials/aside-bar.ejs') -%>
         <!---this is the name body content-->
         <div class= "main2">
             <div class="study">  
@@ -124,8 +55,6 @@
                 <p>If you need more support with your studies, feel free to contact me. We can connect and discuss tutoring suport. We can design a study schedule to help you excel in your courses.</p>
             </div>
 
-
-
         </div>
 
         <div class = "study-techniques">
@@ -139,7 +68,7 @@
                <li>Group Study</li>
                <li>Teach Others</li>
            </ul>
-           <img src="images/young-study.jpeg" style="width: 90%;">
+           <img src="../../images/young-study.jpeg" style="width: 90%;">
     </div>
         </div>
     <footer id="main-footer">
