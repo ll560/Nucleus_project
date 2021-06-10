@@ -17,7 +17,7 @@
     <div class="create-body">
         <div class="create-body-title"><h1>This is helpful!</h1></div>
         <p>Provide some information about resources you used and found helpful for the MCAT. </p>
-        <form action="/survey" method="post"> 
+        <form action="/" method="POST"> 
             
             <div> 
                 <label for="title">What is your favorite book set to use?</label>
@@ -25,12 +25,12 @@
             </div>
             <br>
             <div> 
-                <label for="author">How long did you study?</label>
+                <label for="months">How long did you study?</label>
                 <input type="text" id="months" name="months" placeholder="Months">
             </div>
             <br>
             <div>
-                <label for="publisher">If you signed up for a profession company, which one?</label>
+                <label for="publisher">If you signed up for a professional MCAT prep company, which one?</label>
                 <select name="company" id="company">
                     <option value="select>">Select</option>
                     <option value="kaplan">Kaplan</option>
@@ -44,19 +44,47 @@
             </div>
             <br>
             <div>
-                <label for="title">Did you use the AAMC MCAT prep material?</label>
-                <input type="button" id="yes" name="yes" value="Yes">
-                <input type="button" id="no" name="no" value="No">
-            </div>
-            <br>
-            <div> 
-                <label for="number of pages">Number of Pages:</label>
-                <input type="text" id="number of pages" name="number of pages" placeholder="number of pages">
+                <label for="aacm">Did you use the AAMC MCAT prep material?</label>
+                <label class="radio-button">yes
+                    <input type="radio" checked= "checked" id="yes" name="radio" value="yes">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radio-button">no
+                    <input type="radio" checked= "checked" id="no" name="radio" value="no">
+                    <span class="checkmark"></span>
+                </label>
             </div>
             <br>
             <div>
-                <label for="rating">Rating:</label>
-                <input type="text" id="rating" name="rating" placeholder="rating">
+                
+                <label for="title">Did you use Anki flashcards?</label>
+                <label class="radio-button">yes
+                <input type="radio" checked= "checked" id="yes" name="radio" value="yes">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio-button">no
+                <input type="radio" checked= "checked" id="no" name="radio" value="no">
+                <span class="checkmark"></span>
+            </label>
+            </div>
+            <br>
+            <div> 
+                <label for="cars">Share advice on how you prepared for CARS:</label>
+                <input type="text" id="cars" name="cars" placeholder="Cars advice">
+            </div>
+            <br>
+            <div>
+                <label for="favorite_section">Favorite Section of the MCAT:</label>
+                <select name="favorite_section" id="favorite_section">
+                    <option value="select>">Select</option>
+                    <option value="chem_phys">Chemistry/Physics</option>
+                    <option value="bio_boichem">Biology/Biochem</option>
+                    <option value="critical_analysis_and reasoning">CARS</option>
+                    <option value="psychology">Psychology</option>
+                    <option value="the gold standard">The Gold Standard</option>
+                    <option value="magoosh">Magoosh Mcat Prep</option>
+                    <option value="khan academy">Khan Academy</option>
+                </select>
             </div>
             <br>
             <div class="additional-info">
@@ -65,9 +93,12 @@
             </div>
             <br>
             <div class="button2">
+                <a href="/" >
                 <input type="button" class="button" value="Submit"> 
+                </a>
             </div>
         </form>
+        <!--<p>Submit to see survey results at the bottom of the homepage!</p>-->
         </div>
 
         <footer id="main-footer">

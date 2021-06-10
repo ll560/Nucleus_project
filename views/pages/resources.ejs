@@ -31,19 +31,20 @@
             <div class="resource-text">
                  
                         <div>
-                            <a href="/books/<%= resource._id %>"> <img class="resource-img" src="../images/<%= resource.image %>"/></a></div>
-                        <span class="emphasis"><%= resource.organization %></span><br>
+                            <a href="<%= resource.link %>"> <img class="resource-img" src="../images/<%= resource.image %>"/></a></div>
+                        <span class="emphasis"> <%= resource.organization %></span><br> Program: 
                          <%= resource.program %> <br>
-                        <%= resource.location %> <br>
-                        <%= resource.activity %> <br>
-                        <%= resource.highlight %> <br>
+                        Location: <%= resource.location %> <br>
+                        Activity: <%= resource.activity %> <br>
+                        Hightlight: <%= resource.highlight %> <br>
                         <a class="all-images__link" href="<%= resource.link %>">Details</a>
                     
-                </div> 
+   
+               </div> 
             <% }); %>
+            
 
-
-      
+           
         
     </div>
     

@@ -4,8 +4,9 @@ const adminController = require('../controllers/adminController');
 
 //admin
 router.route('/')
-    .put(adminController.admin_update)
+    .put(adminController.admin_update_put)
     .post(adminController.admin_create_post)
+
 
 router.route('/show')
     .get(adminController.admin_create_get)

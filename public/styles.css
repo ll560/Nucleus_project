@@ -564,15 +564,17 @@ ul.menuItems{
 /*---------------------------About Page---------------------------------*/
 .some-background{
     background-image: url('/images/boat-silhouette.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 85px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    
-    
 }
 
+.motivation-one{
+    padding-left: 20px;
+}
 .container-about-motivation{
     width: 70%; 
     
@@ -643,10 +645,10 @@ ul.list{
 .collection-body{
     border: 5px solid #063C5E;
     padding:30px;
-    margin: 0px;
+    margin: 10px;
     width: 75%;
     height:auto; 
-    position: center;
+    position: center ;
     background: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -704,8 +706,9 @@ ul.list{
 
 .resource-text{ 
     width:160px;
-    height:360px;
+    height:auto;
     position:relative;
+    font-size: .8rem;
     /* border: 5px solid red; */
 }
 
@@ -716,7 +719,9 @@ ul.list{
     height:250px;   
 }
 
-
+.emphasis{
+    font-weight: bold;
+}
 
 
 

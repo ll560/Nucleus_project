@@ -19,7 +19,7 @@
 
     
 
-        <a href="./admin/add-resource"> <input type="button" class="admin-delete-button" value="ADD NEW RESOURCE"></a> 
+        <a href="/updateResourceForm"> <input type="button" class="admin-delete-button" value="ADD NEW RESOURCE"></a> 
     </div>
     <div>
         <table class="table">
@@ -28,43 +28,46 @@
             <th style="text-align: center">EDIT</th>
             <th style="text-align: center">DELETE</th>     
         </tr>
-        <tr>    
-            <td>organization </td>
-            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
-            <td><input type="button"  class="admin-delete-button" value="DELETE"></td>                
+        <% data.forEach(resource => { %>  
+        <tr> 
+             
+            <td><%= resource.organization %></td>
+            <td>  <a href="/resource/<%= resource._id %>/edit"><input type="button" class="admin-edit-button" value="EDIT"></a></td>
+            <td> <a href="/resoures/delete/<%= resource._id %>"><input type="button"  class="admin-delete-button" value="DELETE"></a></td>   
+                   
         </tr>
-        <tr>    
-            <td>Biochemistry Questions </td>
+        <% }); %>  
+        <!-- <tr>    
+            <td>Harvard Medical School</td>
             <td><input type="button" class="admin-edit-button" value="EDIT"></td>
             <td><input type="button" class="admin-delete-button" value="DELETE"></td>
         </tr>
         <tr>    
-            <td>Biology Questions</td>
+            <td>Harvard Extension School</td>
             <td><input type="button" class="admin-edit-button" value="EDIT"></td>
             <td><input type="button" class="admin-delete-button" value="DELETE"></td>                
         </tr>
         <tr>    
-            <td>Psychology Questions</td>
+            <td>University of Massachusetts</td>
             <td><input type="button" class="admin-edit-button" value="EDIT"></td>
-            <td><input type="button" class="admin-delete-button" value="DELETE"></td>                
-        </tr>
-        <tr>    
-            <td>Physics Questions </td>
-            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
-            <td><input type="button" class="admin-delete-button" value="DELETE"></td>
-        </tr>
-        <tr>    
-            <td>Physiology Questions</td>
-            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
-            <td><input type="button" class="admin-delete-button" value="DELETE"></td>
-        </tr>
+            <td><input type="button" class="admin-delete-button" value="DELETE">   </td>                
+        </tr> -->
+       
         <tr>
            <div class="links">
             <td>-------------------------------------------</td>
            </div>
         </tr> 
             
-            
+        <tr> 
+            <th style="text-align: center">SURVEY</th>
+            <th style="text-align: center">EDIT</th>
+            <th style="text-align: center">DELETE</th>     
+        </tr>    
+
+
+
+
         
         <tr>    
             <td>Resource Links</td>

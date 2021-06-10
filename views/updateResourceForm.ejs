@@ -1,0 +1,58 @@
+<%- include('../partials/head') -%>
+  <%- include('../partials/nav-bar') -%>
+      <section id="showcase-admissons">
+          <div class="container-admis">
+          <h1>Update Resource</h1> 
+  
+          <div id="main-button">
+            <button class= "openbtn" onclick="openSidebar()"> &#8592;</button> 
+          </div>
+  
+      </section>
+
+
+      <%- include('../partials/aside-bar.ejs') -%>
+
+<!--body-->
+<h1>Update Resource Form</h1>
+<form action="/resource/<%= resource._id %>?method=PUT" method="POST">
+  <div>
+    <label for="organization">Organization:</label>
+    <input type="text" name="organization" id="organization" value="<%= resource.organization %>" />
+  </div>
+  <div>
+    <label for="program">Program:</label>
+    <input type="text" name="program" id="program" value="<%= resource.program %>" />
+  </div>
+  <div>
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" value="<%= resource.location %>" />
+  </div>
+  <div>
+    <label for="activity">Activity:</label>
+    <input type="text" name="activity" id="activity" value="<%= resource.activity %>" />
+  </div>
+  <div>
+    <label for="highlight">Highlight:</label>
+    <input type="text" name="highlight" id="highlight" value="<%= resource.hightlight %>" />
+  </div>
+  <div>
+    <label for="activity">Activity:</label>
+    <input type="text" name="activity" id="activity" value="<%= resource.activity %>" />
+  </div>
+  <div>
+    <label for="details">Details:</label>
+    <input type="text" name="details" id="details" value="<%= resource.details %>" />
+  </div>
+
+</form>
+
+
+
+
+
+
+
+
+      <!--footer-->
+      <%- include('../partials/footer') -%>

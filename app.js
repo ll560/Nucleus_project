@@ -5,8 +5,10 @@ const app = express();
 const PORT = 3000;
 const morgan = require('morgan');
 const path = require('path');
+require('./config/connection');
 const routes = require('./routes/indexRoutes');
 const methodOverride = require('method-override');
+
 
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
@@ -18,10 +20,6 @@ app.use(routes);
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
-
-
-
-
 
 
 
