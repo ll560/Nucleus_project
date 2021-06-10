@@ -1,11 +1,11 @@
-const { response } = require("express");
+require('dotenv').config();
 const express = require("express");
-const { request } = require("http");
+
 const app = express();
 const PORT = 3000;
 const morgan = require('morgan');
 const path = require('path');
-require('./config/connection');
+
 const routes = require('./routes/indexRoutes');
 const methodOverride = require('method-override');
 
@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 
 
-
+require('./config/connection');
 app.listen(PORT,() => {
     console.log(`Server is listening on port ${PORT}`);
 });

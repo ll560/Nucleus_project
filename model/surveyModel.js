@@ -5,8 +5,8 @@ const surveySchema = new Schema({
     title:  String,
     months: Number,
     company: String,
-    yes: Boolean,
-    yes: Boolean,
+    use_aamc_material: Boolean,
+    use_flashcards: Boolean,
     cars: String,
     favorite_section: String
 });

@@ -8,7 +8,7 @@ const surveyRoutes = require('./surveyRoutes');
 const resourcesRoutes = require('./resourcesRoutes');
 const studyRoutes = require('./studyRoutes');
 
-router.use('/', siteRoutes);//is this the correct path?
+router.use('/', siteRoutes);
 router.use('/admin', adminRoutes);
 router.use('/admissions', admissionsRoutes);
 router.use('/survey', surveyRoutes);

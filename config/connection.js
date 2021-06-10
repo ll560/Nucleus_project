@@ -1,12 +1,13 @@
+//require('dotenv').config;
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/nucleus',
+mongoose.connect(process.env.DB_URL,
     {useNewUrlParser: true, useUnifiedTopology: true},
     (err) => {
-        if(!err){
-            console.log('Successful connection with MongoDB!!!!!');
+        if(err){
+            console.log('Error with MongoDB connection');
         }
         else {
-            console.log('Error with MongoDB connection');
+            console.log('Successful connection with MongoDB!!!!!');
         }
     });

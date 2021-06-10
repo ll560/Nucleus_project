@@ -17,7 +17,7 @@
     <div class="create-body">
         <div class="create-body-title"><h1>This is helpful!</h1></div>
         <p>Provide some information about resources you used and found helpful for the MCAT. </p>
-        <form action="/" method="POST"> 
+        <form action="/survey/" method="POST"> 
             
             <div> 
                 <label for="title">What is your favorite book set to use?</label>
@@ -44,27 +44,25 @@
             </div>
             <br>
             <div>
-                <label for="aacm">Did you use the AAMC MCAT prep material?</label>
+                <label for="use_aamc_material">Did you use the AAMC MCAT prep material?</label>
                 <label class="radio-button">yes
-                    <input type="radio" checked= "checked" id="yes" name="radio" value="yes">
-                    <span class="checkmark"></span>
+                    <input type="radio" id="yes" name="use_aamc_material" value="yes">
+                    
                 </label>
                 <label class="radio-button">no
-                    <input type="radio" checked= "checked" id="no" name="radio" value="no">
-                    <span class="checkmark"></span>
+                    <input type="radio"  id="no" name="use_aamc_material" value="no">
+                    
                 </label>
             </div>
             <br>
             <div>
                 
-                <label for="title">Did you use Anki flashcards?</label>
+                <label for="use_flashcards">Did you use Anki flashcards?</label>
                 <label class="radio-button">yes
-                <input type="radio" checked= "checked" id="yes" name="radio" value="yes">
-                <span class="checkmark"></span>
-            </label>
+                <input type="radio"  id="yes" name="use_flashcards" value="yes">
+                </label>
             <label class="radio-button">no
-                <input type="radio" checked= "checked" id="no" name="radio" value="no">
-                <span class="checkmark"></span>
+                <input type="radio"  id="no" name="use_flashcards" value="no">             
             </label>
             </div>
             <br>
