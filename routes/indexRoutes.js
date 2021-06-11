@@ -14,5 +14,6 @@ router.use('/admissions', admissionsRoutes);
 router.use('/survey', surveyRoutes);
 router.use('/resources', resourcesRoutes);
 router.use('/study', studyRoutes);
+// router.use('/connect', connectRoutes);
 
 module.exports = router;

@@ -6,3 +6,5 @@ module.exports = {
         response.render('pages/resources', {data:data});
     }
 }
+
+//survey and resources same

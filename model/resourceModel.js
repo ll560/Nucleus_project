@@ -8,7 +8,7 @@ const resourceSchema = new Schema({
     activity: String,
     highlight: String,
     cars: String,
-    image: String,
+     
     link: String
 });
 

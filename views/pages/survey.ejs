@@ -17,7 +17,7 @@
     <div class="create-body">
         <div class="create-body-title"><h1>This is helpful!</h1></div>
         <p>Provide some information about resources you used and found helpful for the MCAT. </p>
-        <form action="/survey/" method="POST"> 
+        <form action="/survey" method="POST"> 
             
             <div> 
                 <label for="title">What is your favorite book set to use?</label>
@@ -32,7 +32,7 @@
             <div>
                 <label for="publisher">If you signed up for a professional MCAT prep company, which one?</label>
                 <select name="company" id="company">
-                    <option value="select>">Select</option>
+                    <option value="" disabled selected>Select</option>
                     <option value="kaplan">Kaplan</option>
                     <option value="princeton review">Princeton Review</option>
                     <option value="next step">Next Step</option>
@@ -74,7 +74,7 @@
             <div>
                 <label for="favorite_section">Favorite Section of the MCAT:</label>
                 <select name="favorite_section" id="favorite_section">
-                    <option value="select>">Select</option>
+                    <option value="" disabled selected>Select</option>
                     <option value="chem_phys">Chemistry/Physics</option>
                     <option value="bio_boichem">Biology/Biochem</option>
                     <option value="critical_analysis_and reasoning">CARS</option>
@@ -85,15 +85,17 @@
                 </select>
             </div>
             <br>
-            <div class="additional-info">
-                <label for="additional information">Would you like to add any other infomation?</label>
-               <input type="text" id="tell us" name="tell us" placeholder="Tell Us!"> 
-            </div>
+                <div class="additional-info">
+                    <label for="additional information">Would you like to add any other infomation?</label>
+                    <input type="text" id="tell us" name="tell us" placeholder="Tell Us!"> 
+                </div>
             <br>
+                <div>
+                    
+                </div>
+
             <div class="button2">
-                <a href="/" >
-                <input type="button" class="button" value="Submit"> 
-                </a>
+                <input type="submit" class="button" value="submit">    
             </div>
         </form>
         <!--<p>Submit to see survey results at the bottom of the homepage!</p>-->
