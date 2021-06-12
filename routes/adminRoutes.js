@@ -8,6 +8,9 @@ router.route('/')
     .post(adminController.admin_create_post)
 
 
+// router.route('/new')
+//     .get(adminController.admin_create)
+
 router.route('/show')
     .get(adminController.admin_create_get)
 

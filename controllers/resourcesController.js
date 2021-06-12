@@ -15,8 +15,15 @@ module.exports = {
            })
         },
     resources_create_get: (resquest, response) => {
-        response.render('pages/addBookForm');
-    },
+        console.log("hello")
+        Resource.find({}, (error, resources) => {
+           if (error) {
+              return error;
+           }else {
+              response.render('pages/createNewResource', { data: resources });
+           }
+           })
+        },
     
     resources_update_get: (request, response) => {
         const { id } = request.params;
@@ -72,7 +79,7 @@ resources_delete: (request, response) => {
         if (error){
             return error;
         }else{
-            response.redirect('/resources')
+            response.redirect('/admin/show')
         }
         
     })

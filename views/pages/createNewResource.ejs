@@ -14,35 +14,38 @@
       <%- include('../partials/aside-bar.ejs') -%>
 
 <!--body-->
-<h1>Update Resource Form</h1>
-<form action="/resources/<%= resource._id %>" method="POST">
+<h1>Create New Resource Form</h1>
+<form action="/resources/" method="POST">
   <div>
     <label for="organization">Organization:</label>
-    <input type="text" name="organization" id="organization" value="<%= resource.organization %>" />
+    <input type="text" name="organization" id="organization" />
   </div>
   <div>
     <label for="program">Program:</label>
-    <input type="text" name="program" id="program" value="<%= resource.program %>" />
+    <input type="text" name="program" id="program"  />
   </div>
   <div>
     <label for="location">Location:</label>
-    <input type="text" name="location" id="location" value="<%= resource.location %>" />
+    <input type="text" name="location" id="location"  />
   </div>
   <div>
     <label for="activity">Activity:</label>
-    <input type="text" name="activity" id="activity" value="<%= resource.activity %>" />
+    <input type="text" name="activity" id="activity"  />
   </div>
   <div>
     <label for="highlight">Highlight:</label>
-    <input type="text" name="highlight" id="highlight" value="<%= resource.hightlight %>" />
-  </div>
-  <div>
-    <label for="activity">Activity:</label>
-    <input type="text" name="activity" id="activity" value="<%= resource.activity %>" />
+    <input type="text" name="highlight" id="highlight" placeholder="highlight" />
   </div>
   <div>
     <label for="details">Details:</label>
-    <input type="text" name="details" id="details" value="<%= resource.details %>" />
+    <input type="text" name="details" id="details" placeholder="details" />
+  </div>
+
+
+  <div class="button2">
+    
+    <input type="submit" class="button" value="Submit"> 
+    
   </div>
 
 </form>

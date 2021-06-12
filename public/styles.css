@@ -589,8 +589,8 @@ ul.menuItems{
 
 
 #transparent-button{
-    background-color: transparent;
-    border: 1px #555 solid;
+    /* background-color: transparent; */
+    /* border: 1px #555 solid; */
     margin: 0;
 }
 

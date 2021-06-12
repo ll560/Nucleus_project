@@ -21,8 +21,8 @@ const { v4:uuid } = require('uuid');
     "image": "heart-small.jpeg",
     "link":"https://www.bscp.org"
   },{_id: uuid(),  
-    "organization": "Harvard Extention School",
-    "program": " Postbaccalaureate Premedical Program",
+    "organization": "Harvard Extension School",
+    "program": " Post baccalaureate Premedical Program",
     "location": "Cambridge",
     "activity": "academic enrichment",
     "highlight": "pre-med classes ",

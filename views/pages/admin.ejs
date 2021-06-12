@@ -19,7 +19,7 @@
 
     
 
-        <a href="/admin/new"> <input type="button" class="admin-delete-button" value="ADD NEW RESOURCE"></a> 
+        <a href="/resources/new"> <input type="button" class="admin-delete-button" value="ADD NEW RESOURCE"></a> 
     </div>
     <div>
         <table class="table">
@@ -34,7 +34,7 @@
             <td><%= resource.organization %></td>
             <td>  <a href="/resources/<%= resource._id %>/edit"><input type="button" class="admin-edit-button" value="EDIT"></a></td>
             <td> 
-                <form action="/resources/<%= resource._id %>?_method=DELETE" method= "POST">
+                <form action="/resources/<%= resource._id %>?_method=DELETE" method= "POST" enctype="application/x-www-form-urlencoded">
                 <input type="submit"  class="admin-delete-button" value="DELETE"></form></td>   
                    
         </tr>
@@ -55,39 +55,15 @@
             <td><input type="button" class="admin-delete-button" value="DELETE">   </td>                
         </tr> -->
        
-        <tr>
-           <div class="links">
-            <td>-------------------------------------------</td>
-           </div>
-        </tr> 
+        
             
-        <tr> 
-            <th style="text-align: center">SURVEY</th>
-            <th style="text-align: center">EDIT</th>
-            <th style="text-align: center">DELETE</th>     
-        </tr>    
+           
 
 
 
 
         
-        <tr>    
-            <td>Resource Links</td>
-            <td><input type="button" class="admin-edit-button" value="EDIT"></td>
-            <td><input type="button" class="admin-delete-button" value="DELETE"></td>
-        </tr>
         
-        
-        <tr>    
-            <td>Support Infomation</td>
-            <td><input type=button class="admin-edit-button" value="EDIT"></td>
-            <td><input type=button class="admin-delete-button" value="DELETE"></td>
-        </tr>
-        <tr>    
-            <td>Survey</td>
-            <td><input type=button class="admin-edit-button" value="EDIT"></td>
-            <td><input type=button class="admin-delete-button" value="DELETE"></td>
-        </tr>
     </table>
 </div>
 </div>
