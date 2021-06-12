@@ -28,7 +28,7 @@ module.exports = {
          favorite_section: request.body.favorite_section
       });
       newSurvey.save();
-      response.redirect('/');
+      response.redirect('/#survey-data');
       }
    }
    
