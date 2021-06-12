@@ -1,0 +1,92 @@
+<%- include('../partials/head') -%>
+    <%- include('../partials/nav-bar') -%>
+
+<section id="showcase-admissons">
+    <div class="container-admis">
+    <h1>Connect</h1> 
+
+    <div id="main-button">
+      <button class= "openbtn" onclick="openSidebar()"> &#8592;</button> 
+    </div>
+
+</section>
+
+
+<aside id="sidebar-all" class="sidebar-admiss"  > 
+    <div class="sidebar" >
+    <a href="javascript:void(0)" class="closebtn" onclick= "closeSidebar()">x</a>
+          
+    <!-- <div class="container-left"> -->
+        <div class="container-left-row" >
+            <a href="_blank">
+            <i class="fas fa-home" aria-hidden="true"> Resources</i>
+            </a>
+        </div>
+            
+    <hr>
+        <div class="container-left-row">
+            <a href="admissions.html">
+            <i class="fas fa-home" aria-hidden="true"> Admissions</i>
+            </a>
+        </div>
+    <hr>
+    
+        <div class="container-left-row">
+            <a href="#">
+            <i class="fas fa-home" aria-hidden="true"> Study Habits</i>
+            </a> 
+        </div>
+    <hr>    
+        
+            <div class="container-left-row">
+                <a href="#">
+                <i class="fas fa-home" aria-hidden="true"> Practice</i>
+                </a>
+            </div>
+    <hr>    
+        
+            <div class="container-left-row">
+                <a href="#">
+                <i class="fas fa-home" aria-hidden="true"> Connect</i>
+                </a> 
+            </div>
+          </div>
+        </aside>
+
+        <div class="create-body">
+            <div class="create-body-title"><h1>Let's Connect</h1></div>
+            <p>The application for medical requires many different parts. If you need a tutor for your classes, connect with me so we can work together to improve your foundation in the sciences. </p>
+            <p>Also, I would be available to review personal statements and application essays. Let's connect!</p>
+            <form action="/connect/" method="POST"> 
+                <div class="profile"> 
+                    <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name"  placeholder="name" autofocus>
+                </div>
+                <br>
+                <div> 
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="email">
+                </div>
+                <br>
+                <div> 
+                    <label for="number">Number:</label>
+                    <input type="text" id="number" name="number" placeholder="number">
+                </div>
+                <br>
+                <div class="button2">
+                    <a href="/" >
+                    <input type="submit" class="button" value="Submit"> 
+                    </a>
+                </div>
+                </div>
+                
+            </form>
+            <!--<p>Submit to see survey results at the bottom of the homepage!</p>-->
+            </div>
+
+
+            <%- include('../partials/footer') -%>
+
+</body>
+</html>

@@ -1,10 +1,17 @@
-const { v4:uuid } = require('uuid');
-const data = require('../data');
+// const { v4:uuid } = require('uuid');
+// const data = require('../data');
+const Resource = require('../model/resourceModel');
 
 module.exports = {
     admin_create_get: (request, response) => {
-        response.render('pages/admin', {data: data});
-    },
+        Resource.find({}, (error, resources) => {
+            if (error) {
+               return error;
+            }else {
+               response.render('pages/admin', { data: resources });
+            }
+            })
+         },
     admin_create_post: (request, response) => {
        const title = request.body.title;
         if (title != "") {
@@ -24,17 +31,7 @@ module.exports = {
         response.redirect('pages/addResourcePage')
     }
     },
-    admin_update_get: (request, response) => {
-        const { id } = request.params;
-        Resource.findOne({_id: id}, (error, foundResource) =>{
-            if (error) {
-                return error;
-            } else { 
-                response.render('pages/updateResourceForm', {resource: foundResource})
-            }
-        })
-        response.send('display update form entry');
-    },
+
     admin_update_put: (request, response) => {
         const id = request.params;
         Resource.findByIdAndUpdate({_id: id}, {$set:{

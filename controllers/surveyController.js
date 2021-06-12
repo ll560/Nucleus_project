@@ -17,7 +17,7 @@ module.exports = {
       // Create new survey object
       console.log(request.body);
       const title = request.body.title;
-     
+      
          const newSurvey = new Survey({
          title: request.body.title,
          months: request.body.months, 
@@ -28,7 +28,7 @@ module.exports = {
          favorite_section: request.body.favorite_section
       });
       newSurvey.save();
-      response.redirect('/');
+      response.redirect('/#survey-data');
    
    }
    }

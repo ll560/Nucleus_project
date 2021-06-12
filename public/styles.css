@@ -635,6 +635,12 @@ ul.list{
      
      margin-left: 140px;    
 }
+/*---------------------Connect Page---------------------*/
+.profile{
+    width: 60%;
+    margin: auto;
+}
+
 /*----------------------Resources Page-----------------*/
 .resources-body{
     border:5px solid #333;
@@ -660,7 +666,7 @@ ul.list{
 .collection-body-resource{
     border: 5px solid #063C5E;
     padding:50px;
-    margin: 70px;
+    margin: auto;
     width: 75%;
     height:auto; 
     background-position: center center;

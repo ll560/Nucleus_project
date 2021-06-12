@@ -13,7 +13,8 @@ router.route('/show')
 
 
 router.route('/:id/edit')
-    .get(adminController.admin_update_get)
+    // .get(adminController.admin_update_get)
+    .put(adminController.admin_update_put)
 
 router.route('/delete/:id')
     .delete(adminController.admin_delete)

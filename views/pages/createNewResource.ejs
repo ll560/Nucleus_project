@@ -15,7 +15,7 @@
 
 <!--body-->
 <h1>Update Resource Form</h1>
-<form action="/resource/<%= resource._id %>?method=PUT" method="POST">
+<form action="/resources/<%= resource._id %>" method="POST">
   <div>
     <label for="organization">Organization:</label>
     <input type="text" name="organization" id="organization" value="<%= resource.organization %>" />
@@ -46,9 +46,6 @@
   </div>
 
 </form>
-
-
-
 
 
 

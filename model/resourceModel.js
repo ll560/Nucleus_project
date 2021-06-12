@@ -7,9 +7,7 @@ const resourceSchema = new Schema({
     location: String,
     activity: String,
     highlight: String,
-    cars: String,
-    image: String,
-    link: String
+    details: String
 });
 
 const Resource = mongoose.model('Resource', resourceSchema);
