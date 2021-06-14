@@ -62,12 +62,12 @@ module.exports = {
             location: request.body.location,
             activity: request.body.activity,
             highlight: request.body.highlight,
-            details: reques.body.details
+            details: request.body.details
         }}, {new: true}, error =>{
             if (error){
                 return error;
             } else {
-                response.redirect('/resource/show')
+                response.redirect('/resources/show')
             } 
       
         

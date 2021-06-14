@@ -13,11 +13,11 @@ router.route('/new')
 
 router.route('/:id')
     .delete(resourcesController.resources_delete)
-
+    .put(resourcesController.resources_update_put)
 
 router.route('/:id/edit')
     .get(resourcesController.resources_update_get)
-    .put(resourcesController.resources_update_put)
+    
     
 
 module.exports = router;
