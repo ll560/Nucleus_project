@@ -1,6 +1,15 @@
 // const { v4:uuid } = require('uuid');
-// const data = require('../data');
+const data = require('../data');
 const Resource = require('../model/resourceModel'); 
+var fs = require('fs');
+const path = require('path');
+const express = require('express');
+
+
+
+
+
+
 
 module.exports = {
     resources_get: (request, response) => {
@@ -10,7 +19,7 @@ module.exports = {
            if (error) {
               return error;
            }else {
-              response.render('pages/resources', { data: resources });
+              response.render('pages/resources', { data: data });
            }
            })
         },
@@ -37,12 +46,22 @@ module.exports = {
         })
         
     },
-    resources_post:(request, response)  => {
+
+
+
+
+
+
+    resources_post: (request, response)  => {
         // Create new survey object
      console.log(request.body);
      const organization = request.body.organization;
       
         const newResource = new Resource({
+        img: {
+            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+            contentType: 'image/png'
+            },
         organization: request.body.organization,
         program: request.body.program, 
         location: request.body.location,
@@ -50,6 +69,7 @@ module.exports = {
         highlight: request.body.highlight,
         details: request.body.details,  
      });
+     
      newResource.save();
      response.redirect('/resources/show');
    
@@ -62,12 +82,12 @@ module.exports = {
             location: request.body.location,
             activity: request.body.activity,
             highlight: request.body.highlight,
-            details: reques.body.details
+            details: request.body.details
         }}, {new: true}, error =>{
             if (error){
                 return error;
             } else {
-                response.redirect('/resource/show')
+                response.redirect('/resources/show')
             } 
       
         

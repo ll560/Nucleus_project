@@ -1,7 +1,7 @@
 // const { v4:uuid } = require('uuid');
 // const data = require('../data');
 const Resource = require('../model/resourceModel');
-
+const Image = require('../model/model');
 module.exports = {
     admin_create_get: (request, response) => {
         Resource.find({}, (error, resources) => {
@@ -18,6 +18,11 @@ module.exports = {
        const title = request.body.title;
         if (title != "") {
             const newResource = new Resource({
+
+
+
+
+
                 organization: request.body.organization,
                 program: request.body.program,
                 location: request.body.location,
