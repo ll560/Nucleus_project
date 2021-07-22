@@ -18,21 +18,30 @@
                 <p>The process to apply to medical school is also long. Start early by gaining expereince in the healthcare field, excel in your courses, and build your network.</p>
             </section>
 
+             <% let count = 0 %>
+          <% data.forEach( survey => { %> 
+           
+                <% if (survey != 0 ) { %>
+                <% count++; %>
+                <% } %>
+              <% }) %>
             
-            <div id="main">
+                <div id="main">
                 <div id="survey-data">
                     <h2>Survey-data </h2> 
                 </div>  
                 <div>
                     
                     <ul>
-                    <li> many people took this survey.</li>
+                    <li> Did you take the survey yet?</li>
+                    <li> So far, <%= count %> people took this survey.</li>
                 
-                    <li>There are <%= data.months %> </li>
+                    
                    
-                    <li></li>
+                    
                     </ul>
                 </div> 
+              
             </div>
         </div>
     

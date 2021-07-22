@@ -1,0 +1,54 @@
+<%- include('../partials/head') -%>
+    <%- include('../partials/nav-bar') -%>
+        <section id="showcase-admissons">
+            <div class="container-admis">
+            <h1>Survey</h1> 
+    
+            <div id="main-button">
+              <button class= "openbtn" onclick="openSidebar()"> &#8592;</button> 
+            </div>
+    
+        </section>
+
+
+        <%- include('../partials/aside-bar.ejs') -%>
+
+    <!---This is the survey body-->
+    <div class="create-body">
+        <div class="create-body-title"><h1>Thank you for taking the survey!</h1></div>
+        
+        <!--<p>Submit to see survey results at the bottom of the homepage!</p>-->
+        </div>
+
+        <footer id="main-footer">
+            <p>copyright &copy; 2021 My website</p>
+
+
+
+
+        </footer>
+
+
+
+        <form action="/" method="post"> 
+            
+            
+            <div>
+                <label for="publisher"><h3>When are you submiting your AAMCAS application?</h3></label>
+                <select name="month" id="month">
+                    <option value="select">Select</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="other">Other month</option>
+                </select>
+                <div class="sumbit-button">
+                    <input type="button" class="admin-delete-button" value="Submit"> 
+                </div>
+            </form>
+
+
+</body>
+</html>

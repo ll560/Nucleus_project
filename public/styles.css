@@ -426,6 +426,7 @@ ul.menuItems{
       font-size: 3.5em;
       font-family: Helvetica, sans-serif;
       padding-left: 70px;
+      padding-top: 20px;
   }
   
   /* The actual timeline (the vertical ruler) */
@@ -721,8 +722,8 @@ ul.list{
 
 
 .resource-img{
-    width:160px;
-    height:250px;   
+    width:90px;
+    height:90px;   
 }
 
 .emphasis{
@@ -799,14 +800,33 @@ ul.list{
 }
 
 .tutor{
-    margin-top: 50px;
+    margin-top: 0px;
+    margin-left: 20px;
 }
 
 /* ----------practice-------------- */
 
   
+  .image-block{
+      border: 5px solid #333;
+      padding: 10px;
+      margin: auto;
+      width:95%;
+      min-width: fit-content;
+
+  }
   
-  
+  .button-space{
+      margin: 20px;
+  }
+  .button3{
+      background-color: red;
+      width: 95%;
+      margin-left:10px;
+  }
+  #borderimg{
+      border-image:100%; 
+  }
 
 
   

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const {Schema} = mongoose;
 const resourceSchema = new Schema({
+    image: String,
     organization: String,
     program: String,
     location: String,

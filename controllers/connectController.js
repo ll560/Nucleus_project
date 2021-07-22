@@ -25,7 +25,7 @@ module.exports = {
          
       });
       newProfile.save();
-      response.redirect('/');
+      response.redirect('/home');
    
    }
    }

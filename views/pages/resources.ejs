@@ -16,7 +16,7 @@
         <%- include('../partials/aside-bar.ejs') -%>
     <!------------resource body-------> 
     <div class="resources-body">
-        <h2>Boston: The Science Hub</h2>
+        <h2> Resources in the Boston Area</h2>
         <p>
        There are hospitals, univerisities and organizations around Boston that you can apply to for additonal support. Before applying to medical school you want to expereince as much as you can to supplement your application and show that you understand the responsibilites of being a physician.  
         </p>
@@ -24,26 +24,32 @@
     
     <div class="collection-body-resource">
         <div class="complete-title">
-            <h2>RESOURCE COLLECTION</h2>
+            <h2>RESOURCES</h2>
         </div>
     <div id="all-images">
         <% data.forEach(resource => { %>
             <div class="resource-text">
                  
                         <div>
-                            <a href="<%= resource.link %>"> <img class="resource-img" src="../images/<%= resource.image %>"/></a></div> 
+
+                            <a href="<%= resource.link %>">   
+                                     
+                        <img class="resource-img" src="/images/<%= resource.image %>"/> </a></div> 
+                        
+
+                            
                         <span class="emphasis"> <%= resource.organization %></span><br> Program: 
                          <%= resource.program %> <br>
                         Location: <%= resource.location %> <br>
                         Activity: <%= resource.activity %> <br>
                         Hightlight: <%= resource.highlight %> <br>
-                        <a class="all-images__link" href="<%= resource.link %>">Details</a>
+                        <a class="all-images__link" href="<%= resource.details %>">Details</a>
                     
    
                </div> 
             <% }); %>
             
-
+          
            
         
     </div>

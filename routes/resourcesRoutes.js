@@ -7,7 +7,7 @@ router.route('/')
 
 router.route('/show')
     .get(resourcesController.resources_get)
-
+    
 router.route('/new')
     .get(resourcesController.resources_create_get)
 

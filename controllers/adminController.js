@@ -18,6 +18,7 @@ module.exports = {
        const title = request.body.title;
         if (title != "") {
             const newResource = new Resource({
+                image: request.body.image,
                 organization: request.body.organization,
                 program: request.body.program,
                 location: request.body.location,
@@ -37,6 +38,7 @@ module.exports = {
     admin_update_put: (request, response) => {
         const id = request.params;
         Resource.findByIdAndUpdate({_id: id}, {$set:{
+            image: request.body.image,
             organization: request.body.organization,
             program: request.body.program,
             location: request.body.location,

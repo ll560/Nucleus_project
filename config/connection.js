@@ -11,3 +11,11 @@ mongoose.connect(process.env.DB_URL,
             console.log('Successful connection with MongoDB!!!!!');
         }
     });
+
+
+
+
+//  const con = mongoose.connect(process.env.DB_URL);
+
+
+// module.exports = con;

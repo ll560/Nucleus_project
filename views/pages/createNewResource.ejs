@@ -14,8 +14,13 @@
       <%- include('../partials/aside-bar.ejs') -%>
 
 <!--body-->
-<h1>Create New Resource Form</h1>
-<form action="/resources/" method="POST">
+<div class="resources-body">
+<h1>Create New Resource </h1>
+<form action="/resources/" method="POST" >
+  <!-- <div>
+    <input type="file" name="image" id="image" >
+    <label for="image" class="custom-file-label"></label>
+  </div> -->
   <div>
     <label for="organization">Organization:</label>
     <input type="text" name="organization" id="organization" />
@@ -50,7 +55,7 @@
 
 </form>
 
-
+</div>
 
 
 

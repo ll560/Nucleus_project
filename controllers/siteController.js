@@ -7,7 +7,7 @@ module.exports = {
          if (error) {
              return error;
         }else {
-            response.render("pages/index", {data: Survey}) ;
+            response.render("pages/index", {data: allSurveys}) ;
         }
         }) 
        
