@@ -410,7 +410,7 @@ ul.menuItems{
 }
 
 .openbtn:hover{
-    background-color: #fff;
+    background-color: white; /* #fff*/
 }
 
 
@@ -585,7 +585,7 @@ ul.menuItems{
     display: flex;
     justify-content: space-between;
     
-    /* border:solid 5px black; */
+   
 }
 
 
@@ -698,7 +698,6 @@ ul.list{
     padding-bottom: 30px;
     margin-bottom: 20px;
 
-    /* border: 5px solid black; */
 }
 
 #all-images a:hover{
@@ -716,7 +715,7 @@ ul.list{
     height:auto;
     position:relative;
     font-size: .8rem;
-    /* border: 5px solid red; */
+   
 }
 
 
@@ -749,7 +748,7 @@ ul.list{
 
 
 .button {
-    background-color: #FCCF14; /* Green */
+    background-color: #FCCF14; 
     
     color: black;
     padding: 15px 32px;
