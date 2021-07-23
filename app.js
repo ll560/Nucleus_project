@@ -38,7 +38,7 @@ app.use(morgan('dev'));
 //     newResource.save();
 // });
 
-
+//connection
 const conn = mongoose.createConnection(process.env.DB_URL) ;
 
 //init gfs
