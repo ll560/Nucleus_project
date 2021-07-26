@@ -151,14 +151,13 @@ app.get('/files', (request, response) => {
         //check if files 
         if (!files || files.length === 0) {
             return response.status(404).json ({
-                err: 'No files exsist'
+                err: 'No files exist'
             });
         } 
         //files exist
         return response.json(files);
     });
 });
-
 
 
 
@@ -211,7 +210,6 @@ app.get('/image/:filename', (request, response) => {
             response.redirect('/');
         });
     })
-
 
 
 

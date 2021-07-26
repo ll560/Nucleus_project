@@ -15,7 +15,4 @@ mongoose.connect(process.env.DB_URL,
 
 
 
-//  const con = mongoose.connect(process.env.DB_URL);
 
-
-// module.exports = con;
