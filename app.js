@@ -39,7 +39,14 @@ app.use(morgan('dev'));
 // });
 
 //connection
-const conn = mongoose.createConnection(process.env.DB_URL) ;
+const conn = mongoose.createConnection(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true},  
+    (err)=> {
+    if (err){
+        console.log('Error with MongoDB app.js');
+    }else {
+        console.log('Successful connection MongoDB app.js!!');
+    }
+} ) ;
 
 //init gfs
 let gfs;
