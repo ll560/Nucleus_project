@@ -78,6 +78,12 @@ body{
     margin-bottom: 30px;
 }
 
+
+.text-footer {
+    display: flex;
+    flex-direction: row;
+}
+
 #main-footer a{
     color: #fff;
 }    
@@ -147,10 +153,16 @@ ul.menuItems{
     }
     #h3{
         font-size: 16px;
+        padding: 30px;
         color:white;
         display:flex;
-        flex-direction:column;
+        flex-direction:row;
+        justify-content: space-between;
     }
+
+.copyright{
+    margin: 0px;
+}
 
 
 
@@ -206,7 +218,6 @@ ul.menuItems{
     }
     .top-container{
         width:100%;
-        margin-bottom: 20px;
     }
 }
 /*----------------index page------------*/
@@ -258,6 +269,8 @@ ul.menuItems{
     align-items: center;
     margin: 0;
     height: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
 }
 
 #all-images{
@@ -734,8 +747,9 @@ ul.list{
 
 /* ----------------------------Survey Body------------------------------------*/
 .create-body{
-    border: 5px solid #333;
+    border: 5px solid #fff;
     margin-bottom: 20px;
+    border-radius: 25px;
     background-color: #FFFFFF;
     width: 70%;
     background-position: center center;

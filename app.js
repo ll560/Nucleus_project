@@ -46,7 +46,7 @@ const conn = mongoose.createConnection(process.env.DB_URL, {useNewUrlParser: tru
     }else {
         console.log('Successful connection MongoDB app.js!!');
     }
-} ) ;
+} ) ; 
 
 //init gfs
 let gfs;
