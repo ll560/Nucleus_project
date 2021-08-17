@@ -11,8 +11,3 @@ mongoose.connect(process.env.DB_URL,
             console.log('Successful connection with MongoDB!!!!!');
         }
     });
-
-
-
-
-
