@@ -8,7 +8,9 @@ router.route('/')
 
 router.route('/show')
     .get(surveyController.survey_get);
-
+ 
+router.route('/show.json')  
+    .get(surveyController.survey_json_get)
 
 
 module.exports = router;

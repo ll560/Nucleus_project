@@ -44,10 +44,25 @@ function closeSidebar() {
 }
 
 
-/*--------------------------------*/
-(async() => {
-  const {data} = await fetch() 
-})();
+/*-----------chart data---------------------*/
+let chartData = [];
+
+let fetchSurveyData = async () => {
+  let data = await fetch('http://localhost:3000/survey/show.json') 
+  let parsedData = await data.json()
+  return chartData.push(parsedData.data) /* let not needed b/c overriding data */
+  
+};
+
+fetchSurveyData()
+
+if (chartData !== []) {
+
+  console.log(chartData.forEach(survey => survey))
+}
+
+//check if it exist
+if (document.getElementById('myChart')){
 let ctx = document.getElementById('myChart').getContext('2d');
 let myChart = new Chart(ctx, {
   type: 'bar', /* changes the chart type */
@@ -83,6 +98,6 @@ let myChart = new Chart(ctx, {
       }
   }
 });
-
+}; 
 
 

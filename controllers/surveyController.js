@@ -10,8 +10,18 @@ module.exports = {
             return error;
          }else {
             response.render('pages/survey', { data: allSurveys });
+            // response.json({data: allSurveys});
          }
          })
+      },
+   survey_json_get:(request,response) => {
+      Survey.find({}, (error, allSurveys) => {
+         if (error) {
+            return error;
+         }else {
+            response.json({data: allSurveys});
+         }
+      })
       },
    survey_post: (request, response) => {
       // Create new survey object
