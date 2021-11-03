@@ -1,13 +1,14 @@
 require('dotenv').config();
-const express = require("express");
+const express = require('express');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const morgan = require('morgan');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const path = require('path');
 const crypto = require('crypto');
-const multer =require('multer');
+const multer = require('multer');
+const colors = require('colors');
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 const routes = require('./routes/indexRoutes');
@@ -15,14 +16,16 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const { request, response } = require('express');
 const { resolve } = require('path');
+const { createBrotliCompress } = require('zlib');
 
+colors.enable();
 app.set('view engine', 'ejs');
 
 //middlware
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 
@@ -38,194 +41,184 @@ app.use(morgan('dev'));
 //     newResource.save();
 // });
 
-
 //connection
-const conn = mongoose.createConnection(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true},  
-    (err)=> {
-    if (err){
-        console.log('Error with MongoDB app.js');
-    }else {
-        console.log('Successful connection MongoDB app.js!!');
+const conn = mongoose.createConnection(
+  process.env.DB_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  err => {
+    if (err) {
+      console.log('Error with MongoDB app.js');
+    } else {
+      console.log('Successful connection MongoDB app.js!!');
     }
-} ) ; 
+  }
+);
 
 //init gfs
 let gfs;
 conn.once('open', () => {
-    gfs = Grid(conn.db, mongoose.mongo);
-    gfs.collection('uploads');
-})
-
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection('uploads');
+});
 
 //create storgae engine
 const storage = new GridFsStorage({
-    url: process.env.DB_URL,
-    file: (request, file) => {
-        return new Promise((resolve, reject) =>{
-            crypto.randomBytes(16, (err, buf) =>{
-                if (err){
-                    return reject(err);
-                }
-                const filename = buf.toString('hex') + path.extname(file.originalname);
-                const fileInfo = {
-                    filename: filename,
-                    bucketName: 'uploads'
-                };
-                resolve(fileInfo);
-            });
-        });
-    }
+  url: process.env.DB_URL,
+  file: (request, file) => {
+    return new Promise((resolve, reject) => {
+      crypto.randomBytes(16, (err, buf) => {
+        if (err) {
+          return reject(err);
+        }
+        const filename = buf.toString('hex') + path.extname(file.originalname);
+        const fileInfo = {
+          filename: filename,
+          bucketName: 'uploads',
+        };
+        resolve(fileInfo);
+      });
+    });
+  },
 });
-const upload = multer({storage});
-
+const upload = multer({ storage });
 
 //@route GET/
 app.get('/', (request, response) => {
-    gfs.files.find().toArray((err, files) => {
-        //check if files 
-        if (!files || files.length === 0) {
-            response.render('createNewResource', {files: false});
+  gfs.files.find().toArray((err, files) => {
+    //check if files
+    if (!files || files.length === 0) {
+      response.render('createNewResource', { files: false });
+    } else {
+      files.map(file => {
+        if (
+          file.contentType === 'image/jpeg' ||
+          file.contentType === 'image/png'
+        ) {
+          file.isImage = true;
         } else {
-            files.map(file => {
-                if (file.contentType ==='image/jpeg' || file.contentType === 'image/png') {
-                    file.isImage = true;
-                } else{
-                    file.isImage = false;
-                }
-            });
-            response.render('pages/practice', {files: files});
+          file.isImage = false;
         }
-        
-    });
-   
+      });
+      response.render('pages/practice', { files: files });
+    }
+  });
 });
 
 //////browser
-app.get('/practice/show',(request, response) => {
-    gfs.files.find().toArray((err, files) => {
-        //check if files 
-        if (!files || files.length === 0) {
-            response.render('createNewResource', {files: false});
+app.get('/practice/show', (request, response) => {
+  gfs.files.find().toArray((err, files) => {
+    //check if files
+    if (!files || files.length === 0) {
+      response.render('createNewResource', { files: false });
+    } else {
+      files.map(file => {
+        if (
+          file.contentType === 'image/jpeg' ||
+          file.contentType === 'image/png'
+        ) {
+          file.isImage = true;
         } else {
-            files.map(file => {
-                if (file.contentType ==='image/jpeg' || file.contentType === 'image/png') {
-                    file.isImage = true;
-                } else{
-                    file.isImage = false;
-                }
-            });
-            response.render('pages/practiceBrowser', {files: files});
+          file.isImage = false;
         }
-        
-    });
-   
+      });
+      response.render('pages/practiceBrowser', { files: files });
+    }
+  });
 });
 
-
 app.get('practice/image/:filename', (request, response) => {
-    gfs.files.findOne({filename: request.params.filename}, (err, file) => {
+  gfs.files.findOne({ filename: request.params.filename }, (err, file) => {
     //check if file
-        if (!file || file.length === 0) {
-        return response.status(404).json ({
-        err: 'No files exsist'
-    });
-    } 
+    if (!file || file.length === 0) {
+      return response.status(404).json({
+        err: 'No files exsist',
+      });
+    }
     //if image
     if (file.contentType === 'image/jpeg' || file.contentType === 'img/png') {
-        // read output to browser
-        const readstream = gfs.createReadStream(file.filename);
-        readstream.pipe(response);
+      // read output to browser
+      const readstream = gfs.createReadStream(file.filename);
+      readstream.pipe(response);
     } else {
-        response.status(404).json ({
-            err: 'Not an image'
-        })
+      response.status(404).json({
+        err: 'Not an image',
+      });
     }
-
-
-    })} );
-
-
+  });
+});
 
 //route POST
 app.post('/upload', upload.single('file'), (request, response) => {
-    // response.json({file: request.file});
-    response.redirect('/' )
+  // response.json({file: request.file});
+  response.redirect('/');
 });
-
 
 //@route GET /files
 //@desc Display all files in JSON
 app.get('/files', (request, response) => {
-    gfs.files.find().toArray((err, files) => {
-        //check if files 
-        if (!files || files.length === 0) {
-            return response.status(404).json ({
-                err: 'No files exist'
-            });
-        } 
-        //files exist
-        return response.json(files);
-    });
+  gfs.files.find().toArray((err, files) => {
+    //check if files
+    if (!files || files.length === 0) {
+      return response.status(404).json({
+        err: 'No files exist',
+      });
+    }
+    //files exist
+    return response.json(files);
+  });
 });
 
-
-
 //@route GET files/:filename
-//@desc Display single file 
+//@desc Display single file
 app.get('/files/:filename', (request, response) => {
-    gfs.files.findOne({filename: request.params.filename}, (err, file) => {
+  gfs.files.findOne({ filename: request.params.filename }, (err, file) => {
     //check if file
-        if (!file || file.length === 0) {
-        return response.status(404).json ({
-        err: 'No files exsist'
-    });
-} 
+    if (!file || file.length === 0) {
+      return response.status(404).json({
+        err: 'No files exsist',
+      });
+    }
     //file exists
     return response.json(file);
-
-
-    })} );
+  });
+});
 
 //@route GET image/:filename
 //@desc Display image
 app.get('/image/:filename', (request, response) => {
-    gfs.files.findOne({filename: request.params.filename}, (err, file) => {
+  gfs.files.findOne({ filename: request.params.filename }, (err, file) => {
     //check if file
-        if (!file || file.length === 0) {
-        return response.status(404).json ({
-        err: 'No files exsist'
-    });
-    } 
+    if (!file || file.length === 0) {
+      return response.status(404).json({
+        err: 'No files exsist',
+      });
+    }
     //if image
     if (file.contentType === 'image/jpeg' || file.contentType === 'img/png') {
-        // read output to browser
-        const readstream = gfs.createReadStream(file.filename);
-        readstream.pipe(response);
+      // read output to browser
+      const readstream = gfs.createReadStream(file.filename);
+      readstream.pipe(response);
     } else {
-        response.status(404).json ({
-            err: 'Not an image'
-        })
+      response.status(404).json({
+        err: 'Not an image',
+      });
     }
+  });
+});
 
-
-    })} );
-
-    //route DELETE/files/:id
-    app.delete('/files/:id', (request, response) => {
-        gfs.remove({_id: request.params.id, root: 'uploads'}, (err, gridStore) => {
-            if (err) {
-                return response.status(404).json({err: err});
-            }
-            response.redirect('/');
-        });
-    })
-
-
-
+//route DELETE/files/:id
+app.delete('/files/:id', (request, response) => {
+  gfs.remove({ _id: request.params.id, root: 'uploads' }, (err, gridStore) => {
+    if (err) {
+      return response.status(404).json({ err: err });
+    }
+    response.redirect('/');
+  });
+});
 
 app.use(routes);
 
 require('./config/connection');
-app.listen(PORT,() => {
-    console.log(`Server is listening on port ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
