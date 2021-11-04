@@ -1,13 +1,14 @@
 require('dotenv').config();
-const express = require("express");
+const express = require('express');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const morgan = require('morgan');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const path = require('path');
 const crypto = require('crypto');
-const multer =require('multer');
+const multer = require('multer');
+const colors = require('colors');
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 const routes = require('./routes/indexRoutes');
@@ -15,7 +16,9 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const { request, response } = require('express');
 const { resolve } = require('path');
+const { createBrotliCompress } = require('zlib');
 
+colors.enable();
 app.set('view engine', 'ejs');
 
 //middlware
