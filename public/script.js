@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', event => {
+
   // dropdown menu
   let menuIcon = document.querySelector('.fa-bars');
   let menuItems = document.querySelector('.menuItems');
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', event => {
   }
 
   /*-----------chart data---------------------*/
-
+  document.addEventListener('DOMContentLoaded', event => {
   function createAndMaintainChart(parsedData) {
     console.log('top of createAndMaintain', parsedData);
     let surveyData = [];
